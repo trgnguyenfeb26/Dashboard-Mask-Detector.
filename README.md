@@ -9,7 +9,7 @@
 *MSSV TV2: N19DCCN124*
 
 
-<center><h1><b>BÁO CÁO ĐỒ ÁN JAVA MÔN LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG VỚI JAVA</b></h1></center>
+<center><h1><b>BÁO CÁO ĐỒ ÁN MÔN PYTHON</b></h1></center>
 
 # CHƯƠNG I: GIỚI THIỆU ĐỀ TÀI
 ## 1. Giới thiệu chung:
