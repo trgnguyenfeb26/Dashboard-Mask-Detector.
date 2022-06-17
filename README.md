@@ -1,3 +1,16 @@
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_07-14.png?v=1644797710284)
+
+*Họ Tên TV1: Nguyễn Ngọc Thanh Danh*
+
+*MSSV TV1: N19DCCN027*
+
+*Họ Tên TV2: Nguyễn Trung Nguyên*
+
+*MSSV TV2: N19DCCN124*
+
+
+<center><h1><b>BÁO CÁO ĐỒ ÁN JAVA MÔN LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG VỚI JAVA</b></h1></center>
+
 # CHƯƠNG I: GIỚI THIỆU ĐỀ TÀI
 ## 1. Giới thiệu chung:
 Việc đeo khẩu trang nơi công cộng đã góp phần hạn chế được sự lây lan của dịch bệnh Covid 19 trên toàn cầu. Giám sát người dân thực hiện đúng chủ trương, chính sách của Nhà nước trong việc đeo khẩu trang nơi công cộng hoàn toàn có thể được thực hiện một cách tự động. Chương trình triển khai trên ngôn ngữ Python và sử dụng một số thư viện mã nguồn mở như OpenCV, ,… Mô hình được đào tạo đạt độ chính xác 98% khi tiến hành phát hiện người đeo khẩu trang trên tập dữ liệu thử nghiệm. 
@@ -16,7 +29,7 @@ Trong phạm vi nghiên cứu của bài báo cáo, nhóm chỉ nghiên cứu ti
 
 - Ngoài ra còn có các bước để triển khai một máy chủ:
 
-![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/abc.drawio.svg?v=1644338287907)
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_07-01.png?v=1644796903283)
 
 ## 3. Link Github:
 - Đề tài
@@ -75,6 +88,7 @@ Các bước cần thực hiện là phân vùng khuông mặt đồng thời ph
  23                -1  2   4134912  models.common.C3                        [768, 768, 2, False]          
  24      [17, 20, 23]  1     32328  models.yolo.Detect                      [3, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [192, 384, 768]]
 Model Summary: 369 layers, 20879400 parameters, 20879400 gradients, 48.1 GFLOPs
+
 Transferred 475/481 items from yolov5m.pt
 Scaled weight_decay = 0.0005
 optimizer: SGD with parameter groups 79 weight, 82 weight (no decay), 82 bias
@@ -145,9 +159,13 @@ từ phần này trở lên là kiến trúc của MobileNetV2
 ==================================================================================================
  average_pooling2d (AveragePool  (None, 1, 1, 1280)  0           ['out_relu[0][0]']
  ing2D)
+
  flatten (Flatten)              (None, 1280)         0           ['average_pooling2d[0][0]']
+
  dense (Dense)                  (None, 128)          163968      ['flatten[0][0]']
+
  dropout (Dropout)              (None, 128)          0           ['dense[0][0]']
+
  dense_1 (Dense)                (None, 2)            258         ['dropout[0][0]']
 ==================================================================================================
 Total params: 2,422,210
@@ -158,8 +176,10 @@ ________________________________________________________________________________
 *Sau khi train*
 ```
               precision    recall  f1-score   support
+
    with_mask       0.97      1.00      0.99       433
 without_mask       1.00      0.97      0.98       386
+
     accuracy                           0.98       819
    macro avg       0.99      0.98      0.98       819
 weighted avg       0.98      0.98      0.98       819
@@ -187,3 +207,43 @@ Chúng em sẽ triển khai một *interface* cho *adapter class* của mô hìn
 Việc triển khai **Adapter** như thế này sẽ giúp ta tiết kiệm được nhiều thời gian hơn khi ta thay thế bằng một kiến trúc của mô hình khác, áp dụng một trong các design pattern phổ biến để có thể theo dõi, sử chữa, và bảo trì dễ dàng hơn,
 
 # CHƯƠNG III: THỰC NGHIỆM	
+## Cài đặt và khởi chạy máy chủ
+- *Hệ điều hành windows*
+  ```bash
+  # install dependencies
+  pip install -r requirements.txt
+  
+  # run
+  python ./manage.py runserver 0.0.0.0:3000
+  ```
+  
+- *Hệ điều hành Unix(MacOS, Linux)*
+  ```bash
+  make
+  ```
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_06-31.png?v=1644795166874)
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_06-33.png?v=1644795306614)
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_06-35.png?v=1644795361437)
+## Sử dụng chương trình
+- Mở trình duyệt tại địa chỉ `http://127.0.0.1:3000` trên máy tính của bạn
+> Nếu muốn cho các thiết bị trong mạng LAN có thể connect thì bạn nên kiểm tra địa chỉ mạng LAN bằng lệnh 
+> - Windows: ipconfig
+> - Linux & MacOS: ifconfig
+> Và truy cập với địa chỉ đó và cổng :3000. Exp: `http://192.168.1.14:3000`
+
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_06-42.png?v=1644795802713)
+
+- Trang chủ sẽ liệt kê danh sách các Camera đã được kết nối với máy chủ. Ở hình trên thì nó đã tồn tại 1 Cam đã kết nối.
+- Chọn Camera cần xem thì click vào tên của Camera đó, ví dụ `Camera 0`, trang web sẽ mở một cử sổ riêng ra để quảng lý duy nhất Cam đó.
+
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_06-50.png?v=1644796276119)
+![](https://cdn.glitch.global/c16f71ef-e58b-4291-89f3-62975c2ebc7f/2022-02-14_06-52.png?v=1644796448030)
+
+
+
+# Tài Liệu Tham Khảo
+- [Pre-trained models](https://www.analyticsvidhya.com/blog/2017/06/transfer-learning-the-art-of-fine-tuning-a-pre-trained-model/)
+- [Face Mask Detection in Real-Time using MobileNetv2](https://www.ijeat.org/wp-content/uploads/papers/v10i6/F30500810621.pdf)
+- [How To Train Mobilenetv2 On A Custom Dataset](https://blog.roboflow.com/how-to-train-mobilenetv2-on-a-custom-dataset/)
+- [Django](https://www.djangoproject.com/)
+1
